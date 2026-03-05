@@ -1,0 +1,11 @@
+# Security
+**/.env
+
+# Python Virtual Environments
+**/venv/
+**/.venv/
+**/__pycache__/
+
+# Node
+**/node_modules/
+**/dist/
