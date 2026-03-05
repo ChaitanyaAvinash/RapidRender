@@ -629,7 +629,7 @@ function App() {
 
               {/* SYSTEM REQUIREMENTS */}
               <div style={{ marginTop: '20px', padding: '15px', backgroundColor: isDarkMode ? 'rgba(234, 179, 8, 0.1)' : 'rgba(245, 158, 11, 0.1)', border: `1px solid ${isDarkMode ? 'rgba(234, 179, 8, 0.3)' : 'rgba(245, 158, 11, 0.3)'}`, borderLeft: `4px solid ${isDarkMode ? '#facc15' : '#f59e0b'}`, borderRadius: '10px' }}>
-                <strong style={{ display: 'block', fontSize: '14px', marginBottom: '8px', color: isDarkMode ? '#fde047' : '#b45309' }}>⚠️ System Requirements (Judges Note)</strong>
+                <strong style={{ display: 'block', fontSize: '14px', marginBottom: '8px', color: isDarkMode ? '#fde047' : '#b45309' }}>⚠️ System Requirements</strong>
                 <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '12px', color: theme.subtext, lineHeight: '1.6' }}>
                   <li><b>Browser:</b> Please use <b>Google Chrome</b> for the best possible results. (Safari blocks required background rendering).</li>
                   <li><b>Hardware:</b> AI processing runs entirely on your device. Modern CPU & 8GB+ RAM is recommended. <br/><i>Tip: Plug in your laptop power for maximum render speed.</i></li>
