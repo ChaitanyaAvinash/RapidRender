@@ -282,7 +282,7 @@ function App() {
         } catch (err) {}
       }
 
-      const wsUrl = `wss://your-backend-name.onrender.com/ws/audio?highlights=${encodeURIComponent(highlights)}&description=${encodeURIComponent(description)}`;
+      const wsUrl = `wss://rapidrender-backend.onrender.com/ws/audio?highlights=${encodeURIComponent(highlights)}&description=${encodeURIComponent(description)}`;
       const ws = new WebSocket(wsUrl);
       ws.onopen = () => {
         if (audioStream) {
