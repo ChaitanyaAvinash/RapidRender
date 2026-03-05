@@ -30,7 +30,7 @@ app.add_middleware(
 
 SERPER_API_KEY = os.getenv("SERPER_API_KEY")
 
-bedrock_client = boto3.client(service_name='bedrock-runtime', region_name='us-east-1')
+bedrock_client = boto3.client(service_name='bedrock-runtime')
 
 # --- IMAGE PROXY  ---
 @app.get("/proxy-image")
@@ -176,7 +176,7 @@ async def websocket_endpoint(websocket: WebSocket, highlights: str = "", descrip
         
         asyncio.create_task(fetch_preload())
 
-    client = TranscribeStreamingClient(region="us-east-1")
+    client = TranscribeStreamingClient(region="ap-south-1")
     stream = await client.start_stream_transcription(
         language_code="en-US",
         media_sample_rate_hz=16000,
