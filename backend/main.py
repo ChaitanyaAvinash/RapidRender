@@ -16,6 +16,9 @@ from amazon_transcribe.model import TranscriptEvent
 load_dotenv()
 
 app = FastAPI()
+@app.get("/")
+async def root():
+    return {"status": "RapidRender AI is awake and running!"}
 
 app.add_middleware(
     CORSMiddleware,
