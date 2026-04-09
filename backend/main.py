@@ -44,7 +44,7 @@ async def proxy_image(url: str):
 
 # --- SERPER SEARCH  ---
 async def get_google_image(keyword: str):
-    print(f"🚀 Serper Search: {keyword}")
+    print(f"Serper Search: {keyword}")
     url = "https://google.serper.dev/images"
     payload = json.dumps({"q": keyword})
     headers = {
@@ -61,14 +61,14 @@ async def get_google_image(keyword: str):
                     top_images = images[:10] 
                     chosen_image = random.choice(top_images)
                     
-                    # 🔥 Grab BOTH URLs for Progressive Loading
+                    # Grab BOTH URLs for Progressive Loading
                     thumb_url = chosen_image.get("thumbnailUrl") or chosen_image.get("imageUrl")
                     high_res_url = chosen_image.get("imageUrl") or thumb_url
                     
                     print(f"✅ Found Image! Thumb: {thumb_url} | High-Res: {high_res_url}")
                     return {"success": True, "type": "image", "thumb_url": thumb_url, "high_res_url": high_res_url}
         except Exception as e: 
-            print(f"❌ Serper Error: {e}")
+            print(f"Serper Error: {e}")
             
     return {"success": False}
 
@@ -128,7 +128,7 @@ class MyEventHandler(TranscriptResultStreamHandler):
         try:
             res = bedrock_client.invoke_model(modelId="anthropic.claude-3-haiku-20240307-v1:0", body=body)
             decision = json.loads(json.loads(res.get('body').read())['content'][0]['text'])
-            print(f"🧠 AI Montage Decision: {decision}")
+            print(f"AI Montage Decision: {decision}")
             
             keywords = decision.get('keywords', [])
             
@@ -138,7 +138,7 @@ class MyEventHandler(TranscriptResultStreamHandler):
                 for keyword in keywords[:1]: # Grab the first valid keyword
                     if keyword.strip():
                         if keyword == self.last_keyword and (current_time - self.last_keyword_time) < 10:
-                            print(f"⏳ Skipping '{keyword}' (Already shown recently)")
+                            print(f"Skipping '{keyword}' (Already shown recently)")
                             continue 
                             
                         self.last_keyword = keyword
@@ -154,7 +154,7 @@ class MyEventHandler(TranscriptResultStreamHandler):
                             })
                     
         except Exception as e: 
-            print(f"❌ AI Error: {e}")
+            print(f"AI Error: {e}")
 
 # --- WEBSOCKET AUDIO STREAM ---
 @app.websocket("/ws/audio")
